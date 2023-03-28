@@ -1,0 +1,23 @@
+version: 2.1
+
+orbs:
+  node: circleci/node@5.1.0
+
+workflows:
+  testing:
+    jobs:
+      - nodejs-test
+  # Based on the success of this job, we could then go on to build an image using the included Dockerfile and the CircleCI Docker orb, and continue to deployment...
+
+jobs:
+  nodejs-test:
+    steps:
+      - run: echo "Running build and test!"
+      - run: node --version
+      - checkout
+      - run:
+          command: npm install
+          name: Install Node.js app dependencies
+      - run:
+          command: npm run test
+          name: Test app

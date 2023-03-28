@@ -1,0 +1,20 @@
+{
+  "name": "nodejs-circleci-context-rotation",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "scripts": {
+    "test": "node app.test.js",
+    "start": "node server.js",
+    "dev": "npx nodemon server.js"
+  },
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "@fastify/basic-auth": "^5.0.0",
+    "dotenv": "^16.0.3",
+    "fastify": "^4.15.0",
+    "pino-pretty": "^10.0.0",
+    "tap": "^16.3.4"
+  }
+}
