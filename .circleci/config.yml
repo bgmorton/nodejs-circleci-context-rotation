@@ -21,6 +21,7 @@ jobs:
       - run: echo "$HTTP_USERNAME" >> .env
       - run: echo "HTTP_PASSWORD=" >> .env
       - run: echo "$HTTP_PASSWORD" >> .env
+      - run: cat .env
       # Confirm Node.js is present
       - run: node --version
       # Install dependencies
