@@ -28,7 +28,6 @@ jobs:
       # Write environmental variables to the .env file
       - run: echo "HTTP_USERNAME=$HTTP_USERNAME" > .env
       - run: echo "HTTP_PASSWORD=$HTTP_PASSWORD" >> .env
-      - run: cat .env
       # Run test
       - run:
           command: npm run test
