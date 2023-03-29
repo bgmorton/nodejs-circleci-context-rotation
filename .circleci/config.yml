@@ -6,7 +6,10 @@ orbs:
 workflows:
   testing:
     jobs:
-      - nodejs-test
+      - nodejs-test:
+          # Set the contexts this job will run in - this must match the name of the context in your Organisation Settings
+          context:
+            - example_context
   # Based on the success of this job, we could then go on to build an image using the included Dockerfile and the CircleCI Docker orb, and continue to deployment...
 
 jobs:
