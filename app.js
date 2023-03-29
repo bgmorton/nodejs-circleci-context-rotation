@@ -10,7 +10,7 @@ function build(opts = {}) {
     app.register(require('@fastify/basic-auth'), { validate, authenticate })
 
     async function validate(username, password, request, reply) {
-        if (username !== process.env.HTTP_USERNAME || password !== process.env.HTTP_PASSWORD) {
+        if (!process.env.HTTP_USERNAME || !process.env.HTTP_PASSWORD ||username !== process.env.HTTP_USERNAME || password !== process.env.HTTP_PASSWORD) {
             return new Error('Authentication failed')
         }
     }
